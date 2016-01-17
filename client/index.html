@@ -23,11 +23,13 @@
 </div>
 <div ng-controller="wishlistController">
 
-    <h2>{{items}}</h2> items
-    <ul>
-        <li></li>
+    <h2>{{itemsCount}}</h2> items
+    <ul ng-repeat="item in list">
+        <li>{{item.name}}</li>
     </ul>
 </div>
+
+
 </body>
 
 </html>

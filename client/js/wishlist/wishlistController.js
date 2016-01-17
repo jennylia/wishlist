@@ -3,5 +3,7 @@
  */
 app.controller ('wishlistController', ['$scope', '$resource', function($scope, $resource){
 
-    $scope.items = 5;
+    $scope.itemsCount = 5;
+
+    $scope.list = [{name: 'book'}, {name: 'starbucks'}];
 }])
