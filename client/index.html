@@ -23,10 +23,16 @@
 </div>
 <div ng-controller="wishlistController">
 
-    <h2>{{itemsCount}}</h2> items
+    <h2>{{list.length}}</h2> items
     <ul ng-repeat="item in list">
         <li>{{item.name}}</li>
     </ul>
+
+    <form ng-submit="addItem()">
+        <input type="text" ng-model="name"/>
+        <input type="submit" id="submit" value="Submit" />
+    </form>
+
 </div>
 
 

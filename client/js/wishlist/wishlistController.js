@@ -3,7 +3,16 @@
  */
 app.controller ('wishlistController', ['$scope', '$resource', function($scope, $resource){
 
-    $scope.itemsCount = 5;
-
     $scope.list = [{name: 'book'}, {name: 'starbucks'}];
+
+    $scope.addItem = function(){
+        console.dir($scope);
+        var item = {
+            name: $scope.name
+        }
+        $scope.list.push(item);
+        $scope.name = '';
+    }
+
+
 }])
