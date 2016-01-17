@@ -4,24 +4,21 @@
 app.controller ('wishlistController', ['$scope', '$resource', function($scope, $resource){
 
     var Item = $resource('/api/items');
-    $scope.list = [{name: 'book'}, {name: 'starbucks'}];
-    //
-    //$scope.addItem = function(){
-    //    console.dir($scope);
-    //    var item = {
-    //        name: $scope.name
-    //    }
-    //    $scope.list.push(item);
-    //    $scope.name = '';
-    //}
+    Item.query(function(res){
+        console.log(res);
+        $scope.list = res;
+    });
+
+    $scope.list = [];
 
     //in database they are called item, each item has a name
     $scope.addItem = function(){
         var item = new Item();
         item.name = $scope.name;
         item.$save(function(res){
-            console.log(res.name);
+            console.log(res);
             $scope.list.push({name: res.name});
+            $scope.name = '';
         });
     }
 
